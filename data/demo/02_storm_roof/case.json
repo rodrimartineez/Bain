@@ -1,0 +1,29 @@
+{
+  "title": "Storm tore tiles off a roof (ongoing ingress)",
+  "synthetic": true,
+  "description": "Last night's storm with very strong winds ripped a large section of tiles off our roof. Rain is still getting into the attic and dripping onto the landing ceiling. We have put buckets down but need an urgent temporary cover. Two elderly parents live with us. Weather report and roofer quote attached.",
+  "metadata": {
+    "claim_id": "CLM-DEMO-002",
+    "policy_number": "HOME-30917",
+    "incident_date": "2026-10-12",
+    "property_type": "house",
+    "location": "A Coruna",
+    "claimed_amount_eur": 9800
+  },
+  "images": [
+    "roof_damage.jpg"
+  ],
+  "documents": [
+    "roofer_quote.txt"
+  ],
+  "expected": {
+    "primary_damage_type": "storm_wind",
+    "priority": [
+      "P1"
+    ],
+    "similar_claims_should_include": [
+      "HC-2023-0010",
+      "HC-2024-0034"
+    ]
+  }
+}

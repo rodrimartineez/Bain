@@ -1,0 +1,22 @@
+{
+  "title": "Minor dishwasher leak, text only",
+  "synthetic": true,
+  "description": "Yesterday morning, 2026-10-12, the dishwasher leaked a small amount of water and two kitchen floor tiles near it have lifted. Nothing else was damaged and we are living normally in the flat. Estimated repair around 600 euros.",
+  "metadata": {
+    "claim_id": "CLM-DEMO-004",
+    "property_type": "apartment",
+    "location": "Zaragoza"
+  },
+  "images": [],
+  "documents": [],
+  "expected": {
+    "primary_damage_type": "water_leak",
+    "priority": [
+      "P3",
+      "P4"
+    ],
+    "similar_claims_should_include": [
+      "HC-2023-0006"
+    ]
+  }
+}

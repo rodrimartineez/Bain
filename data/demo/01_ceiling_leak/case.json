@@ -1,0 +1,30 @@
+{
+  "title": "Ceiling leak around a light fitting (main demo, multimodal)",
+  "synthetic": true,
+  "description": "On 2026-10-08 a pipe in the bathroom of the flat above burst while the neighbours were away. Water came through our bedroom ceiling for several hours before the building manager shut off the supply. There is a large brown stain, the plaster is bubbling and water dripped out of the ceiling light, so we switched off that circuit. The room is unusable but the rest of the flat is fine. A plumber's estimate for the repairs is attached.",
+  "metadata": {
+    "claim_id": "CLM-DEMO-001",
+    "policy_number": "HOME-55821",
+    "incident_date": "2026-10-08",
+    "property_type": "apartment",
+    "location": "Madrid",
+    "claimed_amount_eur": 4350
+  },
+  "images": [
+    "ceiling_stain.jpg"
+  ],
+  "documents": [
+    "repair_estimate.pdf"
+  ],
+  "expected": {
+    "primary_damage_type": "water_leak",
+    "priority": [
+      "P1",
+      "P2"
+    ],
+    "similar_claims_should_include": [
+      "HC-2024-0040",
+      "HC-2023-0003"
+    ]
+  }
+}

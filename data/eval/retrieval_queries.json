@@ -1,0 +1,22 @@
+{
+  "notice": "SYNTHETIC evaluation queries written for this take-home. Each query paraphrases a scenario (different wording from the knowledge base) and lists the historical claims a human would consider relevant.",
+  "queries": [
+    {"query": "Upstairs neighbour's bathroom pipe gave way and water is coming through my ceiling near the lamp", "relevant": ["HC-2024-0040", "HC-2023-0003"], "damage_type": "water_leak"},
+    {"query": "The hose of my washing machine split and the kitchen floor is soaked, the flat below has a stain", "relevant": ["HC-2023-0001", "HC-2023-0003"], "damage_type": "water_leak"},
+    {"query": "Strong gale ripped tiles off the roof and rain is now leaking into the loft", "relevant": ["HC-2023-0010", "HC-2024-0034"], "damage_type": "storm_wind"},
+    {"query": "Grease in the frying pan caught fire, kitchen cupboards burnt and the whole downstairs is black with smoke", "relevant": ["HC-2023-0018"], "damage_type": "fire"},
+    {"query": "Muddy floodwater from the street came into the ground floor about half a metre deep", "relevant": ["HC-2023-0007", "HC-2024-0039"], "damage_type": "flood"},
+    {"query": "Wide diagonal cracks appeared over the doors after the dry summer and doors no longer close", "relevant": ["HC-2023-0024"], "damage_type": "structural"},
+    {"query": "Ice balls the size of golf balls broke our skylights and dented the gutters", "relevant": ["HC-2023-0013"], "damage_type": "hail"},
+    {"query": "Black mould on bedroom walls, we dry clothes indoors and the windows stream with condensation", "relevant": ["HC-2023-0027"], "damage_type": "mold"},
+    {"query": "Someone broke into the office through the back door, smashed partitions and stole computers", "relevant": ["HC-2023-0029"], "damage_type": "vandalism"},
+    {"query": "Water keeps dripping into the attic whenever it rains, the roofer says the flashing is rusty and old", "relevant": ["HC-2023-0015"], "damage_type": "roof"},
+    {"query": "Heavy snow made the flat roof of the garage sag and a beam cracked", "relevant": ["HC-2023-0016"], "damage_type": "roof"},
+    {"query": "Lightning hit the chimney and the roof timbers caught fire", "relevant": ["HC-2024-0036"], "damage_type": "fire"}
+  ],
+  "irrelevant_queries": [
+    "I lost my phone on the train",
+    "My car was scratched in a supermarket car park",
+    "Request to update my billing address"
+  ]
+}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claim Triage Assistant</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <h1>Claim Triage Assistant</h1>
+    <p class="sub">Multi-agent ReAct triage for property-damage claims · decision support for adjusters</p>
+  </div>
+  <div id="health" class="health">Checking backend…</div>
+</header>
+
+<main class="layout">
+  <section class="card" id="intake">
+    <div class="card-head">
+      <h2>1 · New claim</h2>
+      <div class="demo-picker">
+        <select id="demo-select"><option value="">Load a demo case…</option></select>
+      </div>
+    </div>
+    <form id="claim-form" novalidate>
+      <label>Description of the incident <span class="req">*</span>
+        <textarea name="description" id="description" rows="6" placeholder="What happened, where, when, what is damaged, is anyone at risk?"></textarea>
+      </label>
+      <div class="grid">
+        <label>Claim ID <input name="claim_id" placeholder="auto if empty"></label>
+        <label>Policy number <input name="policy_number"></label>
+        <label>Incident date <input name="incident_date" type="date"></label>
+        <label>Property type
+          <select name="property_type"><option value="">—</option><option>apartment</option><option>house</option><option>commercial</option></select>
+        </label>
+        <label>Location <input name="location"></label>
+        <label>Claimed amount (EUR) <input name="claimed_amount_eur" inputmode="decimal"></label>
+      </div>
+      <div class="grid two">
+        <label>Damage photos (jpg, png, webp · max 5)
+          <input type="file" id="images" name="images" accept=".jpg,.jpeg,.png,.webp" multiple>
+        </label>
+        <label>Supporting documents (pdf, txt, md · max 5)
+          <input type="file" id="documents" name="documents" accept=".pdf,.txt,.md" multiple>
+        </label>
+      </div>
+      <div id="file-list" class="file-list"></div>
+      <div id="form-errors" class="errors" hidden></div>
+      <div class="actions">
+        <button type="submit" id="submit-btn">Run triage</button>
+        <button type="button" id="reset-btn" class="secondary">New analysis</button>
+      </div>
+    </form>
+    <details class="runs">
+      <summary>Previous runs (saved on the server)</summary>
+      <ul id="runs-list"></ul>
+    </details>
+  </section>
+
+  <section class="card" id="run" hidden>
+    <div class="card-head">
+      <h2>2 · ReAct execution trace</h2>
+      <div id="run-status" class="status"></div>
+    </div>
+    <p class="hint">Each row is one Reason → Act → Observe iteration recorded by the backend. <b>decided by</b> shows whether the LLM coordinator chose the action, the deterministic fallback did, or it was the only valid action.</p>
+    <ol id="trace" class="trace"></ol>
+  </section>
+
+  <section class="card" id="report" hidden></section>
+</main>
+
+<footer class="foot">Historical claims and demo inputs are <b>synthetic</b>. Outputs support — never replace — the adjuster's decision on coverage, liability or payment.</footer>
+<script src="/static/app.js"></script>
+</body>
+</html>

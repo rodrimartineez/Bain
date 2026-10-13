@@ -1,0 +1,26 @@
+{
+  "title": "Inconsistent evidence (photo shows no damage, invoice predates incident)",
+  "synthetic": true,
+  "description": "On 2026-09-20 a pipe under the bathroom floor leaked and destroyed all the floor tiles and the wooden skirting in the bathroom and hallway. Everything has to be replaced. Invoice attached.",
+  "metadata": {
+    "claim_id": "CLM-DEMO-003",
+    "policy_number": "HOME-77410",
+    "incident_date": "2026-09-20",
+    "property_type": "house",
+    "location": "Tarragona",
+    "claimed_amount_eur": 6000
+  },
+  "images": [
+    "bathroom_floor.jpg"
+  ],
+  "documents": [
+    "invoice.pdf"
+  ],
+  "expected": {
+    "primary_damage_type": "water_leak",
+    "needs_human_review": true,
+    "similar_claims_should_include": [
+      "HC-2024-0032"
+    ]
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "embedding_model": "nomic-embed-text",
+  "text_model": "qwen2.5:3b",
+  "vision_model": "gemma3:4b",
+  "retrieval": {
+    "queries": 12,
+    "hit_at_3": 1.0,
+    "mrr_at_5": 1.0,
+    "damage_type_precision_at_3": 0.722,
+    "irrelevant_rejected": "3/3 (threshold 0.63)",
+    "rows": [
+      {
+        "query": "Upstairs neighbour's bathroom pipe gave way and water is coming through my ceiling near the lamp",
+        "first_relevant_rank": 1,
+        "top3": [
+          "HC-2024-0040",
+          "HC-2023-0003",
+          "HC-2023-0001"
+        ],
+        "top1_similarity": 0.7783
+      },
+      {
+        "query": "The hose of my washing machine split and the kitchen floor is soaked, the flat below has a stain",
+        "first_relevant_rank": 1,
+        "top3": [
+          "HC-2023-0003",
+          "HC-2023-0001",
+          "HC-2024-0040"
+        ],
+        "top1_similarity": 0.7702
+      },
+      {
+        "query": "Strong gale ripped tiles off the roof and rain is now leaking into the loft",
+        "first_relevant_rank": 1,
+        "top3": [
+          "HC-2023-0010",
+          "HC-2024-0034",
+          "HC-2024-0033"
+        ],
+        "top1_similarity": 0.8044
+      },
+      {
+        "query": "Grease in the frying pan caught fire, kitchen cupboards burnt and the whole downstairs is black with smoke",
+        "first_relevant_rank": 1,
+        "top3": [
+          "HC-2023-0018",
+          "HC-2023-0021",
+          "HC-2023-0022"
+        ],
+        "top1_similarity": 0.8109
+      },
+      {
+        "query": "Muddy floodwater from the street came into the ground floor about half a metre deep",
+        "first_relevant_rank": 1,
+        "top3": [
+          "HC-2023-0007",
+          "HC-2024-0039",
+          "HC-2023-0008"
+        ],
+        "top1_similarity": 0.791
+      },
+      {
+        "query": "Wide diagonal cracks appeared over the doors after the dry summer and doors no longer close",
+        "first_relevant_rank": 1,
+        "top3": [
+          "HC-2023-0024",
+          "HC-2023-0017",
+          "HC-2023-0025"
+        ],
+        "top1_similarity": 0.7535
+      },
+      {
+        "query": "Ice balls the size of golf balls broke our skylights and dented the gutters",
+        "first_relevant_rank": 1,
+        "top3": [
+          "HC-2023-0013",
+          "HC-2023-0004",
+          "HC-2023-0014"
+        ],
+        "top1_similarity": 0.7285
+      },
+      {
+        "query": "Black mould on bedroom walls, we dry clothes indoors and the windows stream with condensation",
+        "first_relevant_rank": 1,
+        "top3": [
+          "HC-2023-0027",
+          "HC-2023-0028",
+          "HC-2023-0003"
+        ],
+        "top1_similarity": 0.8288
+      },
+      {
+        "query": "Someone broke into the office through the back door, smashed partitions and stole computers",
+        "first_relevant_rank": 1,
+        "top3": [
+          "HC-2023-0029",
+          "HC-2023-0026",
+          "HC-2023-0004"
+        ],
+        "top1_similarity": 0.7418
+      },
+      {
+        "query": "Water keeps dripping into the attic whenever it rains, the roofer says the flashing is rusty and old",
+        "first_relevant_rank": 1,
+        "top3": [
+          "HC-2023-0015",
+          "HC-2024-0034",
+          "HC-2023-0017"
+        ],
+        "top1_similarity": 0.7994
+      },
+      {
+        "query": "Heavy snow made the flat roof of the garage sag and a beam cracked",
+        "first_relevant_rank": 1,
+        "top3": [
+          "HC-2023-0016",
+          "HC-2023-0014",
+          "HC-2023-0015"
+        ],
+        "top1_similarity": 0.7937
+      },
+      {
+        "query": "Lightning hit the chimney and the roof timbers caught fire",
+        "first_relevant_rank": 1,
+        "top3": [
+          "HC-2024-0036",
+          "HC-2023-0015",
+          "HC-2023-0010"
+        ],
+        "top1_similarity": 0.8345
+      }
+    ]
+  },
+  "coordinator_mode": "llm",
+  "end_to_end": [
+    {
+      "case": "01_ceiling_leak",
+      "seconds": 31,
+      "priority": "P1",
+      "primary_damage_type": "water_leak",
+      "retrieved": [
+        "HC-2024-0040",
+        "HC-2023-0004",
+        "HC-2023-0003",
+        "HC-2023-0001",
+        "HC-2024-0034"
+      ],
+      "narrative_source": "llm",
+      "llm_decisions": 4,
+      "fallback_decisions": 0,
+      "steps": 7,
+      "checks": {
+        "completed": true,
+        "damage_type": true,
+        "priority_in_expected": true,
+        "expected_precedent_retrieved": true
+      },
+      "passed": true
+    },
+    {
+      "case": "02_storm_roof",
+      "seconds": 31,
+      "priority": "P1",
+      "primary_damage_type": "storm_wind",
+      "retrieved": [
+        "HC-2023-0010",
+        "HC-2024-0034",
+        "HC-2024-0033",
+        "HC-2023-0012",
+        "HC-2023-0016"
+      ],
+      "narrative_source": "llm",
+      "llm_decisions": 4,
+      "fallback_decisions": 0,
+      "steps": 7,
+      "checks": {
+        "completed": true,
+        "damage_type": true,
+        "priority_in_expected": true,
+        "expected_precedent_retrieved": true
+      },
+      "passed": true
+    },
+    {
+      "case": "03_inconsistent_claim",
+      "seconds": 25,
+      "priority": "P3",
+      "primary_damage_type": "water_leak",
+      "retrieved": [
+        "HC-2024-0040",
+        "HC-2024-0032",
+        "HC-2023-0001",
+        "HC-2023-0006",
+        "HC-2023-0003"
+      ],
+      "narrative_source": "llm",
+      "llm_decisions": 4,
+      "fallback_decisions": 0,
+      "steps": 7,
+      "checks": {
+        "completed": true,
+        "damage_type": true,
+        "human_review": true,
+        "expected_precedent_retrieved": true
+      },
+      "passed": true
+    },
+    {
+      "case": "04_minor_text_only",
+      "seconds": 6,
+      "priority": "P4",
+      "primary_damage_type": "water_leak",
+      "retrieved": [
+        "HC-2023-0006",
+        "HC-2024-0032",
+        "HC-2023-0003",
+        "HC-2023-0001",
+        "HC-2024-0040"
+      ],
+      "narrative_source": "llm",
+      "llm_decisions": 1,
+      "fallback_decisions": 0,
+      "steps": 5,
+      "checks": {
+        "completed": true,
+        "damage_type": true,
+        "priority_in_expected": true,
+        "expected_precedent_retrieved": true
+      },
+      "passed": true
+    }
+  ]
+}

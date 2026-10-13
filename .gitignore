@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.env
+# generated at runtime
+data/index/
+output/uploads/
+output/runs/
+output/report_*.json
+# the empty Bain folder skeleton (archive extracted without files)
+software-engineering-take-home/
+
+# local tool configuration (machine-specific paths)
+.claude/

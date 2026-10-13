@@ -1,0 +1,23 @@
+[project]
+name = "claim-triage"
+version = "1.0.0"
+description = "Multi-agent ReAct claim triage with a vector knowledge base (Bain take-home)"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 130
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+# FastAPI declares form/file params with File()/Form() defaults by design.
+ignore = ["B008"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["ollama: integration tests that need a running Ollama server with the configured models"]
+addopts = "-m 'not ollama'"
+
+[tool.ruff.lint.per-file-ignores]
+# short lambdas are the clearest way to script fake model responses in tests
+"tests/*" = ["E731"]
